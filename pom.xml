@@ -11,7 +11,7 @@
   <groupId>io.dashaun.service</groupId>
   <artifactId>gateway</artifactId>
   <version>0</version>
-  <name>gateway</name>
+  <name>${project.groupId}.${project.artifactId}</name>
   <properties>
     <java.version>21</java.version>
     <spring-cloud.version>2023.0.0</spring-cloud.version>
