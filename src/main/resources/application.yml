@@ -27,12 +27,6 @@ spring:
     cloud:
         gateway:
             routes:
-                - id: insights
-                  uri: http://localhost:8081
-                  predicates:
-                      - Path=/insights/**
-                  filters:
-                      - RewritePath=/insights/(?<segment>.*), /$\{segment}
                 - id: zipkin
                   uri: http://openzipkin.dashaun-io.svc.cluster.local:9411
                   predicates:
@@ -41,6 +35,8 @@ spring:
                   uri: https://javagrunt.github.io
                   predicates:
                       - Path=/**
+    config:
+        import: "optional:configserver:"
     data:
         redis:
             host: ${REDIS_HOST:localhost}
